@@ -1,0 +1,248 @@
+version: "4.1"
+name: osc-boot
+type: ARM
+deviceName: null
+packDir: null
+srcDirs: []
+virtualFolder:
+  name: <virtual_root>
+  files: []
+  folders:
+    - name: Application
+      files: []
+      folders:
+        - name: MDK-ARM
+          files:
+            - path: MDK-ARM/startup_stm32h750xx.s
+          folders: []
+        - name: User
+          files:
+            - path: Src/main.c
+            - path: Src/user_diskio.c
+            - path: Src/fatfs.c
+            - path: Src/usb_device.c
+            - path: Src/usbd_conf.c
+            - path: Src/usbd_desc.c
+            - path: Src/usbd_storage_if.c
+            - path: Src/stm32h7xx_it.c
+            - path: Src/stm32h7xx_hal_msp.c
+          folders: []
+    - name: Drivers
+      files: []
+      folders:
+        - name: STM32H7xx_HAL_Driver
+          files:
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd_ex.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_usb.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mdma.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_exti.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_ltdc.c
+            - path: Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_ltdc_ex.c
+          folders: []
+        - name: CMSIS
+          files:
+            - path: Src/system_stm32h7xx.c
+          folders: []
+    - name: Middlewares
+      files: []
+      folders:
+        - name: FatFs
+          files:
+            - path: Middlewares/Third_Party/FatFs/src/diskio.c
+            - path: Middlewares/Third_Party/FatFs/src/ff.c
+            - path: Middlewares/Third_Party/FatFs/src/ff_gen_drv.c
+            - path: Middlewares/Third_Party/FatFs/src/option/syscall.c
+          folders: []
+        - name: USB_Device_Library
+          files:
+            - path: Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c
+            - path: Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c
+            - path: Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c
+            - path: Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Src/usbd_msc.c
+            - path: Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Src/usbd_msc_bot.c
+            - path: Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Src/usbd_msc_data.c
+            - path: Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Src/usbd_msc_scsi.c
+          folders: []
+    - name: bootloader
+      files:
+        - path: Src/dev.c
+        - path: Src/gui_ascii.c
+        - path: Src/crc.c
+        - path: Src/boot.c
+      folders: []
+    - name: ::CMSIS
+      files: []
+      folders: []
+dependenceList: []
+outDir: build
+miscInfo:
+  uid: f05d05c0b3339d4d506067bcc5d3a124
+targets:
+  osc-boot:
+    cppPreprocessAttrs:
+      defineList:
+        - USE_HAL_DRIVER
+        - STM32H750xx
+        - USE_HAL_DRIVER
+        - STM32H750xx
+      incList:
+        - Inc
+        - Drivers/STM32H7xx_HAL_Driver/Inc
+        - Drivers/STM32H7xx_HAL_Driver/Inc/Legacy
+        - Middlewares/Third_Party/FatFs/src
+        - Middlewares/ST/STM32_USB_Device_Library/Core/Inc
+        - Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc
+        - Drivers/CMSIS/Device/ST/STM32H7xx/Include
+        - Drivers/CMSIS/Include
+        - hzs
+        - .cmsis/include
+        - MDK-ARM/RTE/_osc-boot
+      libList: []
+    excludeList: []
+    settings:
+      debugger: cortex-debug
+    toolchain: AC5
+    toolchainConfigMap:
+      AC5:
+        archExtensions: ""
+        cpuType: Cortex-M7
+        floatingPointHardware: double
+        options:
+          version: 4
+          afterBuildTasks: []
+          asm-compiler:
+            defines: []
+          beforeBuildTasks: []
+          c/cpp-compiler:
+            CXX_FLAGS: --diag_suppress=1 --diag_suppress=1295
+            C_FLAGS: --diag_suppress=1 --diag_suppress=1295
+            c99-mode: true
+            one-elf-section-per-function: true
+            optimization: level-0
+            optimize-for-time: true
+            warnings: all-warnings
+          global:
+            output-debug-info: enable
+            use-microLIB: true
+          linker:
+            $outputTaskExcludes:
+              - .bin
+            output-format: elf
+            ro-base: "0x08000000"
+            rw-base: "0x20000000"
+            xo-base: ""
+        scatterFilePath: MDK-ARM/osc_boot/osc-boot.sct
+        storageLayout:
+          RAM:
+            - id: 1
+              isChecked: false
+              mem:
+                size: "0x48000"
+                startAddr: "0x30000000"
+              noInit: false
+              tag: RAM
+            - id: 2
+              isChecked: false
+              mem:
+                size: "0x10000"
+                startAddr: "0x38000000"
+              noInit: false
+              tag: RAM
+            - id: 3
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 1
+              isChecked: true
+              mem:
+                size: "0x20000"
+                startAddr: "0x20000000"
+              noInit: false
+              tag: IRAM
+            - id: 2
+              isChecked: false
+              mem:
+                size: "0x80000"
+                startAddr: "0x24000000"
+              noInit: false
+              tag: IRAM
+          ROM:
+            - id: 1
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 2
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 3
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 1
+              isChecked: true
+              isStartup: true
+              mem:
+                size: "0x20000"
+                startAddr: "0x8000000"
+              tag: IROM
+            - id: 2
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: IROM
+        useCustomScatterFile: false
+    uploadConfigMap:
+      JLink:
+        baseAddr: ""
+        bin: ""
+        cpuInfo:
+          cpuName: "null"
+          vendor: "null"
+        otherCmds: ""
+        proType: 1
+        speed: 8000
+      STLink:
+        address: "0x8000000"
+        bin: ""
+        elFile: None
+        optionBytes: .eide/osc-boot.st.option.bytes.ini
+        otherCmds: ""
+        proType: SWD
+        resetMode: default
+        runAfterProgram: true
+        speed: 4000
+    uploader: STLink
