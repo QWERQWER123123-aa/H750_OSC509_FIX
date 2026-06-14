@@ -13,6 +13,7 @@
 本项目是基于 **OSC509 便携式示波器套件** 的固件修改版，采用 **AI（Vibe Coding）** 辅助编程方式进行问题修复与功能改进。固件运行于 **STM32H750xx** (ARM Cortex-M7) 平台，集成了自研的 FOS 实时操作系统、图形用户界面(GUI)、数字信号处理(DSP)、USB 通信、文件系统等核心模块。
 
 ## 🏗️ 项目结构
+```
 H750_OSC509_FIX/ 
 ├── osc509_V2.4/ # 主固件程序 (V2.4) 
 │ ├── Oscilloscope/ 
@@ -32,7 +33,7 @@ H750_OSC509_FIX/
 ├── OSC_BOOTLOADER_V1.2_256k/ # Bootloader (V1.2, 256KB) ├── HARDWARE/ # 硬件资料 (原理图, PCB, 数据手册) 
 ├── LICENSE # MIT 许可证 
 └── README.md
-
+```
 ## ✨ 主要特性
 
 - **4 通道示波器**：支持多通道波形采集、显示与测量
