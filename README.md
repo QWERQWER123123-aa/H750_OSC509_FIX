@@ -17,7 +17,8 @@
 H750_OSC509_FIX/ 
 ├── osc509_V2.4/ # 主固件程序 (V2.4) 
 │ ├── Oscilloscope/ 
-│ │ ├── osc/ # 示波器核心逻辑（波形、测量、校准、菜单等） │ │ ├── gui/ # GUI 框架 
+│ │ ├── osc/ # 示波器核心逻辑（波形、测量、校准、菜单等）
+│ │ ├── gui/ # GUI 框架 
 │ │ ├── fos/ # FOS 实时操作系统 
 │ │ ├── dsp/ # 数字信号处理 (CMSIS-DSP) 
 │ │ ├── dev/ # 设备驱动 (LCD, 触摸, SD卡, SDRAM 等) 
@@ -30,7 +31,8 @@ H750_OSC509_FIX/
 │ ├── Middlewares/ # 中间件 (FatFs, USB Host/Device) 
 │ ├── usb_lib/ # USB 应用层 
 │ └── MDK-ARM/ # Keil MDK 工程文件 
-├── OSC_BOOTLOADER_V1.2_256k/ # Bootloader (V1.2, 256KB) ├── HARDWARE/ # 硬件资料 (原理图, PCB, 数据手册) 
+├── OSC_BOOTLOADER_V1.2_256k/ # Bootloader (V1.2, 256KB)
+├── HARDWARE/ # 硬件资料 (原理图, PCB, 数据手册) 
 ├── LICENSE # MIT 许可证 
 └── README.md
 ```
